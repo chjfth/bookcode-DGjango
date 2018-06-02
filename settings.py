@@ -32,16 +32,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-	'django.contrib.admin',
-	'django.contrib.auth',
-	'django.contrib.contenttypes',
-	'django.contrib.sessions',
-	'django.contrib.messages',
-	'django.contrib.staticfiles',
-#    'about',
+#	'django.contrib.admin',
+#	'django.contrib.auth',
+#	'django.contrib.contenttypes',
+#	'django.contrib.sessions',
+#	'django.contrib.messages',
+#	'django.contrib.staticfiles',
+	'books', # 'mysite.books'
 ]
 
-MIDDLEWARE = [
+xx_MIDDLEWARE = [
 	'django.middleware.security.SecurityMiddleware',
 	'django.contrib.sessions.middleware.SessionMiddleware',
 	'django.middleware.common.CommonMiddleware',
@@ -51,8 +51,7 @@ MIDDLEWARE = [
 	'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#ROOT_URLCONF = 'osite1.urls'
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'urls' # 'osite1.urls'
 
 """
 TEMPLATES = [
