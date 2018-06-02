@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 #	'django.contrib.messages',
-#	'django.contrib.staticfiles',
-	'books', # 'mysite.books'
+	'django.contrib.staticfiles',
+	'books',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +53,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'urls' # 'osite1.urls'
 
-"""
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -69,7 +69,7 @@ TEMPLATES = [
         },
     },
 ]
-"""
+
 # WSGI_APPLICATION = 'osite1.wsgi.application'
 
 
