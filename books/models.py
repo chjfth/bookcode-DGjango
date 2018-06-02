@@ -11,6 +11,10 @@ class Publisher(models.Model):
 	country = models.CharField(max_length=50)
 	website = models.URLField()
 
+	def __str__(self):
+		return self.name
+
+
 class Author(models.Model):
 	first_name = models.CharField(max_length=30)
 	last_name = models.CharField(max_length=40)
