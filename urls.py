@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.conf.urls import url
-#from django.contrib import admin
+from django.contrib import admin
 #from django.views.generic import TemplateView
 
 from views import hello, current_datetime, hours_ahead
@@ -24,6 +24,6 @@ urlpatterns = [
 	url(r'^$', hello),
 	url(r'^time/$', current_datetime),
 	url(r'^time/plus/(\d{1,2})/$', hours_ahead),
-#	url(r'^admin/', admin.site.urls),
+	url(r'^admin/', admin.site.urls),
 #	url(r'^about/', about_views.contact),
 ]
