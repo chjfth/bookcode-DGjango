@@ -5,11 +5,11 @@ from django.db import models
 
 class Publisher(models.Model):
 	name = models.CharField(max_length=30)
-	address = models.CharField(max_length=50)
-	city = models.CharField(max_length=60)
-	state_province = models.CharField(max_length=30)
+	address = models.CharField(max_length=50, blank=True)
+	city = models.CharField(max_length=60, blank=True)
+	state_province = models.CharField(max_length=30, blank=True)
 	country = models.CharField(max_length=50)
-	website = models.URLField()
+	website = models.URLField(blank=True)
 
 	def __str__(self):
 		return self.name
@@ -28,5 +28,10 @@ class Book(models.Model):
 	authors = models.ManyToManyField(Author) # many-to-many
 	publisher = models.ForeignKey(Publisher) # many-to-one
 	publication_date = models.DateField()
+
+	def __str__(self):
+		return self.title
+
+
 
 #end0
