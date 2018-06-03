@@ -20,14 +20,15 @@ from django.contrib import admin
 #from django.views.generic import TemplateView
 
 from views import hello, current_datetime, hours_ahead
-from books.views import search_form
+from books import views
 
 urlpatterns = [
 	url(r'^$', hello),
 	url(r'^time/$', current_datetime),
 	url(r'^time/plus/(\d{1,2})/$', hours_ahead),
 	
-	url(r'^search-form/$', search_form),
+	url(r'^search-form/$', views.search_form),
+	url(r'^search/$', views.search),
 	
 	url(r'^admin/', admin.site.urls),
 #	url(r'^about/', about_views.contact),
