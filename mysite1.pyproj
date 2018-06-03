@@ -6,8 +6,10 @@
     <RootNamespace>mysite1</RootNamespace>
     <InterpreterId>{7b2637d4-1ddb-48df-880e-f9fdd81a4397}</InterpreterId>
     <InterpreterVersion>2.7</InterpreterVersion>
-    <WebBrowserPort>8001</WebBrowserPort>
+    <WebBrowserPort>8003</WebBrowserPort>
     <DjangoSettingsModule>settings</DjangoSettingsModule>
+    <PythonRunWebServerCommandArguments>runserver --settings $(DjangoSettingsModule) 0.0.0.0:%SERVER_PORT% $(CommandLineArguments)</PythonRunWebServerCommandArguments>
+    <PythonDebugWebServerCommandArguments>runserver --noreload --settings $(DjangoSettingsModule) 0.0.0.0:%SERVER_PORT% $(CommandLineArguments)</PythonDebugWebServerCommandArguments>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>

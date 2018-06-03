@@ -2,7 +2,7 @@ import datetime
 from django.http import HttpResponse, Http404
 
 def hello(request):
-	return HttpResponse("Hello world~")
+	return HttpResponse("Hello world~ @ %s"%(request.META['HTTP_HOST']))
 
 def current_datetime(request):
 	now = datetime.datetime.now()
