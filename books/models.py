@@ -29,4 +29,4 @@ class Book(models.Model):
 	publisher = models.ForeignKey(Publisher) # many-to-one
 	publication_date = models.DateField()
 
-#end
+#end0
