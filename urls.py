@@ -29,6 +29,8 @@ urlpatterns = [
 	
 #	url(r'^search-form/$', views.search_form), # no need now
 	url(r'^search/$', views.search),
+
+	url(r'^contact/$', views.contact),
 	
 	url(r'^admin/', admin.site.urls),
 #	url(r'^about/', about_views.contact),
