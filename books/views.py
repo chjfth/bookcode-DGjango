@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
 from django.shortcuts import render_to_response
-from django.shortcuts import render
+from django.core.mail import send_mail
+
 from books.models import Book
 
 # Create your views here.
@@ -39,12 +40,12 @@ def contact(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			cd = form.cleaned_data
-			send_mail(
-				cd['subject'],
-				cd['message'],
-				cd.get('email', 'noreply@example.com'),
-				['siteowner@example.com'],
-			)
+#			send_mail(
+#				cd['subject'],
+#				cd['message'],
+#				cd.get('email', 'noreply@example.com'),
+#				['siteowner@example.com'],
+#			)
 			return HttpResponseRedirect('/contact/thanks/')
 	else:
 		form = ContactForm()
@@ -52,4 +53,5 @@ def contact(request):
 	return render(request, 'contact_form.html', {'form': form})
 
 
-# woo
+def contact_thanks(request):
+	return HttpResponse('Thank you for contacting~')

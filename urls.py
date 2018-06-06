@@ -31,6 +31,7 @@ urlpatterns = [
 	url(r'^search/$', views.search),
 
 	url(r'^contact/$', views.contact),
+	url(r'^contact/thanks/$', views.contact_thanks),
 	
 	url(r'^admin/', admin.site.urls),
 #	url(r'^about/', about_views.contact),
