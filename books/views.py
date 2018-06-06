@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from django.shortcuts import render_to_response
+from django.shortcuts import render
 from books.models import Book
 
 # Create your views here.
@@ -23,7 +24,7 @@ def search(request):
 			books = Book.objects.filter(title__icontains=q)
 			return render_to_response('search_results.html', {'books': books, 'query': q})
 
-	return render_to_response('search_form.html', {'errors':errors})
+	return render(request, 'search_form.html', {'errors':errors})
 
 
 ######### DGjango p136 ##########
@@ -48,7 +49,7 @@ def contact(request):
 	else:
 		form = ContactForm()
 	
-	return render_to_response('contact_form.html', {'form': form})
+	return render(request, 'contact_form.html', {'form': form})
 
 
 # woo
