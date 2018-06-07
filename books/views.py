@@ -34,8 +34,13 @@ from .forms import ContactForm
 
 #from django.views.decorators.csrf import csrf_protect
 
-#@csrf_protect
-def contact(request):
+def contact0(request):
+	return contact(request, 0)
+
+def contact1(request):
+	return contact(request, 1)
+
+def contact(request, mystyle):
 	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
@@ -52,7 +57,9 @@ def contact(request):
 			initial={'subject': 'your initial value!'}
 			)
 	
-	return render(request, 'contact_form.html', {'form': form})
+	form_html = 'contact_form.html' if mystyle==0 else 'contact_form_u1.html'
+	
+	return render(request, form_html, {'form': form })
 
 
 def contact_thanks(request):

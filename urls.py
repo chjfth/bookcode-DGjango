@@ -30,7 +30,8 @@ urlpatterns = [
 #	url(r'^search-form/$', views.search_form), # no need now
 	url(r'^search/$', views.search),
 
-	url(r'^contact/$', views.contact),
+	url(r'^contact/$', views.contact0),
+	url(r'^contact1/$', views.contact1),
 	url(r'^contact/thanks/$', views.contact_thanks),
 	
 	url(r'^admin/', admin.site.urls),
