@@ -23,6 +23,13 @@ class Author(models.Model):
 	def __str__(self):
 		return "%s %s"%(self.first_name, self.last_name)
 
+#
+# p197 new: 
+#
+class BookManager(models.Manager):
+	def title_count(self, keyword):
+		return self.filter(title__icontains=keyword).count()
+
 class Book(models.Model):
 	title = models.CharField(max_length=100)
 	authors = models.ManyToManyField(Author) # many-to-many
@@ -32,6 +39,7 @@ class Book(models.Model):
 	def __str__(self):
 		return self.title
 
+	objects = BookManager() # p197 new, 'class BookManager' must has have been defined
 
 
-#end0
+
