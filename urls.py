@@ -44,6 +44,7 @@ urlpatterns = [
 	url(r'^ch13wt$', ch13v.ch13_write_twice),
 	url(r'^ch13csv$', ch13v.unruly_passengers_csv),
 	url(r'^ch13pdf$', ch13v.hello_pdf),
+	url(r'^ch13pdf2$', ch13v.hello_pdf2),
 	
 	url(r'^admin/', admin.site.urls),
 #	url(r'^about/', about_views.contact),
