@@ -22,6 +22,8 @@ from django.contrib import admin
 from views import hello, current_datetime, hours_ahead
 from books import views
 
+from ch13.views import ch13getpng
+
 from django.conf.urls import handler404
 #handler404 = current_datetime # a test, ok
 
@@ -37,6 +39,8 @@ urlpatterns = [
 	url(r'^contact/$', views.contact0),
 	url(r'^contact1/$', views.contact1),
 	url(r'^contact/thanks/$', views.contact_thanks),
+
+	url(r'^ch13getpng$', ch13getpng),
 	
 	url(r'^admin/', admin.site.urls),
 #	url(r'^about/', about_views.contact),
