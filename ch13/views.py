@@ -12,8 +12,10 @@ def ch13getpng(request):
 
 # https://docs.djangoproject.com/en/1.11/ref/request-response/#httpresponse-objects
 def ch13_write_twice(request):
-	response = HttpResponse()
-	response.write("<p>Here's the text of the Web page.</p>")
+	response = HttpResponse("<p>My line 0") # this will appear as response[0]
+	
+	response.write("<p>Here's the text of the Web page.</p>") # appear as response[1]
+	
 	time.sleep(1.0) # note: this does not produce HTTP chunked data, which  requires StreamingHttpResponse
 	response.write("<p>Here's another paragraph.</p>")
 	return response
