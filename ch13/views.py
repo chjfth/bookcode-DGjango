@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 import csv # CH13 use 
+from datetime import datetime
 
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.shortcuts import render
@@ -13,7 +14,8 @@ def ch13getpng(request):
 
 # https://docs.djangoproject.com/en/1.11/ref/request-response/#httpresponse-objects
 def ch13_write_twice(request):
-	response = HttpResponse("<p>My line 0") # this will appear as response[0]
+
+	response = HttpResponse("<p>Line 0 @ %s"%(datetime.now())) # this will appear as response[0]
 	
 	response.write("<p>Here's the text of the Web page.</p>") # appear as response[1]
 	
