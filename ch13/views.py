@@ -21,8 +21,9 @@ def ch13_write_twice(request):
 
 	# response.content = "<p>Start-again" # this will start from(=overwrite) response[0]
 
-	response['aGe'] = 120
 	response.write("<p>Here's another paragraph.</p>")
+
+	response['aGe'] = 120 # just a test, ok, client side sees this HTTP header
 	return response
 
 # CH13: unruly_passengers_csv
