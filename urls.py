@@ -22,8 +22,12 @@ from django.contrib import admin
 from views import hello, current_datetime, hours_ahead
 from books import views
 
+from django.conf.urls import handler404
+#handler404 = current_datetime # a test, ok
+
 urlpatterns = [
 	url(r'^$', hello),
+	
 	url(r'^time/$', current_datetime),
 	url(r'^time/plus/(\d{1,2})/$', hours_ahead),
 	
